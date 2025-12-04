@@ -1,0 +1,30 @@
+{
+  "schedule": {
+    "run_times": ["09:00", "17:00"],
+    "timezone": "America/Chicago"
+  },
+  "states": {
+    "MN": {
+      "enabled": true,
+      "scraper_module": "scrapers.MN_scrape",
+      "scraper_class": "MNDOTScraper",
+      "years": [2023, 2024, 2025]
+    },
+    "ND": {
+      "enabled": false,
+      "scraper_module": "scrapers.ND_scrape",
+      "scraper_class": "NDDOTScraper",
+      "years": [2023, 2024, 2025],
+      "note": "Not yet implemented - set enabled to true when ready"
+    }
+  },
+  "scraper_options": {
+    "headless": false,
+    "retry_on_failure": true,
+    "max_retries": 3
+  },
+  "database": {
+    "path": "data/dot_bids.db"
+  }
+}
+
